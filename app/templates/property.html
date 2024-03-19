@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <div class="sec">
+    <div class="col-md-8">
+      <img src="{{ url_for('uploaded_images', filename=property.photo) }}" class="card-img-top" alt="{{ property.photo }}">
+    </div>
+    <div class="col-md-4">
+      <div class="right">
+          <h1>{{ property.title }}</h1>
+          <div class="price-type">
+            <div class="price-body">
+              <p class="price">{{ property.price }}</p>
+            </div>
+            <div class="type-body">
+              <p class="type">{{ property.type }}</p>
+            </div>
+          </div>
+        <p>{{ property.description }}</p>
+        <div class="bed-bath">
+          <p><i class="fa fa-bed" aria-hidden="true"></i>{{ property.bedrooms }} Bedrooms</p>
+          <p><i class="fa fa-bath" aria-hidden="true"></i>{{ property.bathrooms }} Bathrooms</p> 
+        </div>
+        <p><i class="fa fa-map-marker" aria-hidden="true"></i>{{ property.location }}</p>
+        <button class="btn btn-primary" disabled>Email Realtor</button>
+      </div>
+    </div>
+  </div>
+{% endblock %}
